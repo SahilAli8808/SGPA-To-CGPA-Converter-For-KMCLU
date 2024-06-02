@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGPA to CGPA Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>SGPA to CGPA Converter</h1>
+        <div class="note">
+            <p><strong>Note:</strong> This converter  is only for <strong> B.Tech CSE KMCLU </strong> students. For more details, refer to the <a href="https://drive.google.com/file/d/15GlimaCJxPir_Z-kogaro1Y3Jc2fPUS3/view" target="_blank">marking scheme</a>.</p>
+        </div>
+        <form id="converter-form">
+            <div class="form-group">
+                <label for="numSemesters">Select Number of Semesters:</label>
+                <select id="numSemesters" name="numSemesters" onchange="updateCredits()">
+                    <option value="8">8</option>
+                    <option value="7">7</option>
+                    <option value="6">6</option>
+                    <option value="5">5</option>
+                    <option value="4">4</option>
+                    <option value="3">3</option>
+                    <option value="2">2</option>
+                    <option value="1">1</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="sgpas">Enter SGPAs (comma separated):</label>
+                <input type="text" id="sgpas" name="sgpas" required>
+            </div>
+            <div class="form-group">
+                <label for="credits">Credits for each SGPA:</label>
+                <input type="text" id="credits" name="credits" disabled>
+            </div>
+            <button type="button" onclick="calculateCGPA()">Calculate CGPA</button>
+        </form>
+        <div class="result">
+            <h2>CGPA: <span id="cgpa"></span></h2>
+            <h3>Percentage: <span id="percentage"></span>%</h3>
+        </div>
+       
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
